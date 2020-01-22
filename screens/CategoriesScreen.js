@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const CategoriesScreen = props => {
   return (
-    <View>
+    <View style={styles.screen}>
       <Text>CategoriesScreen</Text>
     </View>
   );
@@ -11,7 +11,9 @@ const CategoriesScreen = props => {
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 

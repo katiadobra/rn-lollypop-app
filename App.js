@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
 
 // expo install expo-font
 import * as Font from 'expo-font';
@@ -7,6 +6,8 @@ import * as Font from 'expo-font';
 // component, that will prolong the Splash-screen,
 // when the app starts, until our fonts are loaded
 import { AppLoading } from 'expo';
+
+import MealsNavigator from './navigation/MealsNavigator';
 
 // this Func will in the end use Font (from imports)
 const fetchFonts = () => {
@@ -28,9 +29,5 @@ export default function App() {
     );
   }
 
-  return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+  return <MealsNavigator />;
 }
