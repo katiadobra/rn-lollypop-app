@@ -11,4 +11,4 @@ Requirements
 
 Mockup
 ------------
-![Image of the projeck mockup](https://github.com/katiadobra/rn-meals-app/blob/master/assets/mocup.jpg)
+![Image of the projeck mockup](https://github.com/katiadobra/rn-lollypop-app/blob/master/assets/mocup.jpg)

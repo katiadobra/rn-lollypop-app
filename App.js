@@ -7,7 +7,7 @@ import * as Font from 'expo-font';
 // when the app starts, until our fonts are loaded
 import { AppLoading } from 'expo';
 
-import MealsNavigator from './navigation/MealsNavigator';
+import AccNavigator from './navigation/AccNavigator';
 
 // this Func will in the end use Font (from imports)
 const fetchFonts = () => {
@@ -29,5 +29,5 @@ export default function App() {
     );
   }
 
-  return <MealsNavigator />;
+  return <AccNavigator />;
 }
