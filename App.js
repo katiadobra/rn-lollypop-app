@@ -8,6 +8,12 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
 import MealsNavigator from './navigation/MealsNavigator';
+
+// npm i --save react-native-screens
+import { useScreens } from 'react-native-screens';
+
+useScreens();
+
 // this Func will in the end use Font (from imports)
 const fetchFonts = () => {
   return Font.loadAsync({
