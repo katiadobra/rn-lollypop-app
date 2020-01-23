@@ -8,7 +8,6 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
 import MealsNavigator from './navigation/MealsNavigator';
-
 // this Func will in the end use Font (from imports)
 const fetchFonts = () => {
   return Font.loadAsync({
