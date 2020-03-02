@@ -25,6 +25,8 @@
     "react-navigation-drawer": "^2.3.3",
     "react-navigation-stack": "^2.0.15",
     "react-navigation-tabs": "^2.7.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
     "serialize-javascript": "^2.1.2",
     "sharp-cli": "^1.13.1",
     "tree-kill": "^1.2.2"
