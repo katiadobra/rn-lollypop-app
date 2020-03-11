@@ -34,8 +34,10 @@
     "tree-kill": "^1.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "react-devtools": "^4.5.0",
+    "redux-devtools": "^3.5.0"
   },
   "private": true
 }
