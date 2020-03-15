@@ -1,4 +1,7 @@
-import * as moment from 'moment';
+import moment, * as moments from 'moment';
+// import moment from 'moment';
+// with this, throw an error:
+// moment is not a function. (In 'moment(this.date)', 'moment' is an instance of Object)
 
 class Order {
   constructor(id, items, totalAmount, date) {

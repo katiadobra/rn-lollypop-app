@@ -45,8 +45,8 @@ ProductsOverviewScreen.navigationOptions = navData => {
           title="Menu"
           iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
           onPress={() => {
-            navData.navigation.navigate('Orders');
-            // navData.navigation.dispatch(DrawerActions.toggleDrawer());
+            // navData.navigation.navigate('Orders');
+            navData.navigation.dispatch(DrawerActions.toggleDrawer());
             // navData.navigation.navigate('toggleDrawer');
             // Doesn't work, need fix
             // console.log('12345677');
