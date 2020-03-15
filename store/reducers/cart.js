@@ -1,4 +1,5 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions/cart';
+import { ADD_ORDER } from '../actions/orders';
 import CartItem from '../../models/cart-item';
 
 const initialState = {
@@ -34,25 +35,28 @@ export default (state = initialState, action) => {
     case REMOVE_FROM_CART:
       const selectedCartItem = state.items[action.pid];
       const currentQty = selectedCartItem.quantity;
-      let updatedCartItem;
+      let updatedCartItems;
       if (currentQty > 1) {
         // need to reduce it, not erase it
-        updatedCartItem = new CartItem(
+        const updatedCartItem = new CartItem(
           selectedCartItem.quantity - 1,
           selectedCartItem.productPrice,
           selectedCartItem.productTitle,
           selectedCartItem.sum - selectedCartItem.productPrice
         );
-        updatedCartItem = { ...state.items, [action.pid]: updatedCartItem };
+        updatedCartItems = { ...state.items, [action.pid]: updatedCartItem };
       } else {
-        updatedCartItem = { ...state.items };
-        delete updatedCartItem[action.pid];
+        updatedCartItems = { ...state.items };
+        delete updatedCartItems[action.pid];
       }
       return {
         ...state,
-        items: updatedCartItem,
+        items: updatedCartItems,
         totalAmount: state.totalAmount - selectedCartItem.productPrice
       };
+    case ADD_ORDER:
+      return initialState;
   }
+
   return state;
 };
