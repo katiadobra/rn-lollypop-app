@@ -1,32 +1,45 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { FlatList, Text, StyleSheet, Platform } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import { CATEGORIES } from '../data/dummy-data';
+import { DrawerActions } from 'react-navigation-drawer';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderButton from '../../components/UI/HeaderButton';
 
 const OrdersScreen = props => {
+  const orders = useSelector(state => state.orders.orders);
+
   return (
-    <View style={styles.screen}>
-      <Text>DetailScreen</Text>
-    </View>
+    <FlatList
+      style={styles.screen}
+      data={orders}
+      keyExtractor={item => item.id}
+      renderItem={itemData =>
+        <Text>
+          {itemData.item.totalAmount}
+        </Text>}
+    />
   );
 };
 
-// navigationData
-CategoryMealsScreen.navigationOptions = navigationData => {
-  const catId = navigationData.navigation.getParam('categoryId');
-  const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
-
+OrdersScreen.navigationOptions = navData => {
   return {
-    headerTitle: selectedCategory.title
+    headerTitle: 'Your Orders',
+    headerLeft: () =>
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+          onPress={() => {
+            navData.navigation.dispatch(DrawerActions.toggleDrawer());
+          }}
+        />
+      </HeaderButtons>
   };
 };
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+  screen: {}
 });
 
 export default OrdersScreen;

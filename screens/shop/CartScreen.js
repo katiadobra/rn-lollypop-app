@@ -21,7 +21,7 @@ const CartScreen = props => {
       });
     }
     return transformedCartItems.sort(
-      (a, b) => (a.productIt > b.productId ? 1 : -1)
+      (a, b) => (a.productId > b.productId ? 1 : -1)
     );
   });
   const dispatch = useDispatch();
@@ -51,12 +51,16 @@ const CartScreen = props => {
             title={itemData.item.productTitle}
             amount={itemData.item.sum}
             onRemove={() => {
-              dispatch(cartActions.RemoveFromCart(itemData.item.productId));
+              dispatch(cartActions.removeFromCart(itemData.item.productId));
             }}
           />}
       />
     </View>
   );
+};
+
+CartScreen.navigationOptions = {
+  headerTitle: 'Your Cart'
 };
 
 const styles = StyleSheet.create({

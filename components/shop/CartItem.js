@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
+  quantity: {
+    color: '#888',
+    fontSize: 16
+  },
   deleteButton: {
     marginLeft: 20
   }
