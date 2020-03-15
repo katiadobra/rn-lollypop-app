@@ -3,10 +3,10 @@ import { FlatList, Platform } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
-import { DrawerActions } from 'react-navigation-drawer';
-
 import HeaderButton from '../../components/UI/HeaderButton';
 import ProductItem from '../../components/shop/ProductItem';
+
+import { DrawerActions } from 'react-navigation-drawer';
 import * as cartActions from '../../store/actions/cart';
 
 const ProductsOverviewScreen = props => {
@@ -45,9 +45,11 @@ ProductsOverviewScreen.navigationOptions = navData => {
           title="Menu"
           iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
           onPress={() => {
-            navData.navigation.dispatch(DrawerActions.toggleDrawer());
+            navData.navigation.navigate('Orders');
+            // navData.navigation.dispatch(DrawerActions.toggleDrawer());
             // navData.navigation.navigate('toggleDrawer');
-            console.log('12345677');
+            // Doesn't work, need fix
+            // console.log('12345677');
           }}
         />
       </HeaderButtons>,

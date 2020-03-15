@@ -15,10 +15,15 @@ const defaultNavOptions = {
   headerStyle: {
     backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
   },
+  headerTitleStyle: {
+    fontFamily: 'open-sans-bold'
+  },
+  headerBackTitleStyle: {
+    fontFamily: 'open-sans'
+  },
   headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
 };
 
-// default nav
 const ProductsNavigator = createStackNavigator(
   {
     ProductsOverview: ProductsOverviewScreen,
@@ -38,8 +43,7 @@ const ProductsNavigator = createStackNavigator(
   }
 );
 
-// sideDraw nav
-const OrdersNavigator = createDrawerNavigator(
+const OrdersNavigator = createStackNavigator(
   {
     Orders: OrdersScreen
   },
@@ -56,8 +60,7 @@ const OrdersNavigator = createDrawerNavigator(
   }
 );
 
-// combine navigators
-const ShopNavigator = createStackNavigator(
+const ShopNavigator = createDrawerNavigator(
   {
     Products: ProductsNavigator,
     Orders: OrdersNavigator

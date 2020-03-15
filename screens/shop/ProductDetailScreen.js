@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 import Colors from '../../constants/Colors';
-import { useSelector, useDispatsch, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as cartActions from '../../store/actions/cart';
 
 const ProductDetailScreen = props => {
