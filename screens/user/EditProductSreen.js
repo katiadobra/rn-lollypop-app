@@ -22,7 +22,9 @@ const EditProductScreen = props => {
 
   const [title, setTitle] = useState(editedProduct ? editedProduct.title : '');
   const [imageUrl, setImageUrl] = useState(
-    editedProduct ? editedProduct.imageUrl : ''
+    editedProduct
+      ? editedProduct.imageUrl
+      : 'https://i.ibb.co/pwx5KGq/default.png'
   );
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState(
