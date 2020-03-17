@@ -7,14 +7,43 @@ export const deleteProduct = productId => {
 };
 
 export const createProduct = (title, description, imageUrl, price) => {
-  return {
-    type: CREATE_PRODUCT,
-    productData: {
-      title,
-      description,
-      imageUrl,
-      price
-    }
+  return async dispatch => {
+    // any async code
+
+    // be default send a get-request, but we need post
+    // that's why we nedd 2nd argument
+    const response = await fetch(
+      'https://rn-lollypop-app.firebaseio.com/product.json',
+      {
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          title,
+          description,
+          imageUrl,
+          price
+        })
+      }
+    );
+
+    const resData = await response.json();
+
+    console.log(resData);
+
+    console.log(process.env.REACT_APP_FIREBASE_HOST);
+
+    dispatch({
+      type: CREATE_PRODUCT,
+      productData: {
+        id: resData.name,
+        title,
+        description,
+        imageUrl,
+        price
+      }
+    });
   };
 };
 
