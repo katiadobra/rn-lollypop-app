@@ -1,14 +1,11 @@
 {
   "expo": {
-    "name": "rn-meals-app",
-    "slug": "rn-meals-app",
+    "name": "Lollypop online-shop",
+    "description": "Lollypop accessories ❤️ Hair accessories, elastic bands, hairpins for children ❤️ Free shipping from 199 UAH. ❤️ Packed and shipped with love ❤️.",
+    "slug": "rn-lollypop-app",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,9 +17,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     }
