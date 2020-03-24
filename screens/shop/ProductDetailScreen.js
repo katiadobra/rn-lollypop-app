@@ -30,11 +30,12 @@ const ProductDetailScreen = props => {
           }}
         />
       </View>
-      ${selectedProduct.price &&
-        <Text style={styles.price}>
-          ${selectedProduct.price.toFixed(2)}
-        </Text>}
-      <Text style={styles.description}>{selectedProduct.description}</Text>
+      <Text style={styles.price}>
+        ${selectedProduct.price.toFixed(2)}
+      </Text>
+      <Text style={styles.description}>
+        {selectedProduct.description}
+      </Text>
     </ScrollView>
   );
 };
@@ -58,9 +59,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#888',
     textAlign: 'center',
-    marginVertical: 20
+    marginVertical: 20,
+    fontFamily: 'open-sans-bold'
   },
   description: {
+    fontFamily: 'open-sans',
     fontSize: 14,
     textAlign: 'center',
     marginHorizontal: 20
